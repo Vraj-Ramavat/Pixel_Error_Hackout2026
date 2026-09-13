@@ -2,11 +2,15 @@
 
 > **Verifiable, data-backed monitoring of algae-based carbon capture through dual-source IoT and satellite remote-sensing reconciliation.**
 
+[![Live Platform](https://img.shields.io/badge/Live%20Platform-Render-brightgreen?logo=render&logoColor=white)](https://algae-carbon-platform.onrender.com/)
 [![Hackathon](https://img.shields.io/badge/Hackathon-HackOut%202026-brightgreen.svg)](https://github.com/Vraj-Ramavat/Pixel_Error_Hackout2026)
 [![Track](https://img.shields.io/badge/Track-Circular%20Carbon%20Ecosystem-blue.svg)](#)
 [![Team](https://img.shields.io/badge/Team-Pixel%20Error-orange.svg)](#)
 [![Institution](https://img.shields.io/badge/Institution-Adani%20University-purple.svg)](#)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+> 🌐 **Live Deployed Application:** [https://algae-carbon-platform.onrender.com/](https://algae-carbon-platform.onrender.com/)  
+> 📑 **Live API & Swagger Documentation:** [https://algae-carbon-platform.onrender.com/docs](https://algae-carbon-platform.onrender.com/docs)
 
 ---
 
@@ -157,42 +161,101 @@ The platform continuously aligns time-series sensor trends with periodic orbital
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started & Live Demo
+ 
+### 🌐 Live Platform Access
+The application is continuously deployed and accessible online:
+* **Production Web App:** [https://algae-carbon-platform.onrender.com/](https://algae-carbon-platform.onrender.com/)
+* **Interactive API Documentation (Swagger):** [https://algae-carbon-platform.onrender.com/docs](https://algae-carbon-platform.onrender.com/docs)
+* **API Health Check:** [https://algae-carbon-platform.onrender.com/healthz](https://algae-carbon-platform.onrender.com/healthz)
 
-### Prerequisites
-* Python 3.10+
-* Node.js 18+ and npm / yarn
-* Git
+---
 
-### Local Setup
+### Local Development Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Vraj-Ramavat/Pixel_Error_Hackout2026.git
-   cd Pixel_Error_Hackout2026
-   ```
+From the project root:
+```bash
+# 1. Install root dependencies
+npm install
 
-2. **Backend Setup:**
-   ```bash
-   cd backend
-   python -m venv venv
-   # On Windows:
-   .\venv\Scripts\activate
-   # On Linux/macOS:
-   source venv/bin/activate
-   pip install -r requirements.txt
-   uvicorn main:app --reload
-   ```
+# 2. Setup backend virtual environment and install dependencies
+cd backend
+python -m venv .venv
+# On Windows:
+.\.venv\Scripts\activate
+# On Linux/macOS:
+source .venv/bin/activate
+pip install -r requirements.txt
+cd ..
 
-3. **Frontend Setup:**
-   ```bash
-   cd ../frontend
-   npm install
-   npm run dev
-   ```
+# 3. Install frontend dependencies
+npm --prefix frontend install
 
-4. **Access the application:**
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+# 4. Start both Backend & Frontend concurrently
+npm run dev
+```
+
+The application will be accessible at:
+* **Frontend Dashboard:** [http://localhost:5173](http://localhost:5173)
+* **Backend API & Swagger Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### Option 2: Standalone Component Setup
+
+#### Backend Setup:
+```bash
+cd backend
+python -m venv .venv
+# On Windows:
+.\.venv\Scripts\activate
+# On Linux/macOS:
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app:app --reload --port 8000
+```
+
+#### Frontend Setup:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Option 3: Automated Demo Runner
+```bash
+npm run demo
+```
+This builds and serves the API and dashboard locally, performs system integrity checks, and opens the browser ready for demonstration.
+
+---
+
+## 📁 Repository Structure
+
+```
+├── backend/
+│   ├── api/            # REST API routes and Pydantic schemas
+│   ├── data/           # Seed datasets (sites.csv, sensor_readings.csv, imagery_index.csv)
+│   ├── engine/         # Biofixation Stoichiometric calculator & data store
+│   ├── simulator/      # Synthetic IoT sensor & Sentinel-2 imagery simulation
+│   ├── verification/   # Dual-signal reconciliation & anomaly rules
+│   ├── reporting/      # Report generation & certification hashing
+│   ├── app.py          # FastAPI application entry point
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── components/ # Charts, filters, badges, theme toggle
+│   │   ├── pages/      # SiteOverview, SiteDetail, Report pages
+│   │   └── api/        # Axios / fetch client
+│   ├── package.json
+│   └── vite.config.js
+├── scripts/
+│   ├── dev.js          # Concurrent backend + frontend development launcher
+│   ├── demo.js         # Offline zero-dependency demo runner
+│   └── make_deck.py    # Deck builder utility
+├── architecture.md     # In-depth system architecture & reconciliation logic
+├── DEMO.md             # Judge demonstration guide & speaking points
+├── CONTEXT.md          # Technical background & scientific basis
+└── prd.md              # Product requirements & acceptance criteria
+```
 
 ---
 
@@ -205,3 +268,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 <div align="center">
   <sub>Developed with 💚 by <b>Team Pixel Error</b> for <b>HackOut 2026</b></sub>
 </div>
+

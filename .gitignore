@@ -5,18 +5,28 @@ __pycache__/
 
 # Virtual environments
 venv/
+.venv/
 env/
 ENV/
 .env
 
-# Node.js
+# Database & SQLite files
+*.db
+*.sqlite3
+
+# Node.js & Build outputs
 node_modules/
 dist/
 build/
 .next/
 
-# IDE & OS files
+# IDE, AI & OS files
 .vscode/
 .idea/
+.claude/
 .DS_Store
 Thumbs.db
+
+# Cygwin/Git-Bash crash dumps
+*.stackdump
+

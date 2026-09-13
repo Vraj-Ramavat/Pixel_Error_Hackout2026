@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="BioFix">
+  <!-- The mark is the argument: one algae leaf, measured on one side and
+       inferred on the other. The solid half is the sensor record; the dashed
+       half is the independent satellite proxy drawn against it. They only
+       close into a single leaf when the two agree. -->
+  <rect width="64" height="64" rx="13" fill="#34483A"/>
+  <path d="M32.8 7.5C49 21 49 43 32.8 56.5Z" fill="#AAB394"/>
+  <path d="M32.8 7.5V56.5" stroke="#34483A" stroke-width="1.7" stroke-linecap="round" opacity="0.7"/>
+  <path d="M31.2 7.5C15 21 15 43 31.2 56.5" fill="none" stroke="#D0A85C"
+        stroke-width="2.8" stroke-linecap="round" stroke-dasharray="4.8 4.4"/>
+</svg>
